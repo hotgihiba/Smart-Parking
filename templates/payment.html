@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block title %}Payment{% endblock %}{% block content %}
+<div class="auth-wrap"><div class="card auth-card"><span class="eyebrow">CHECKOUT</span><h2 class="fw-bold">Complete booking</h2><div class="payment-total"><small>Amount payable</small><h1>₹{{ booking.totalAmount }}</h1><small>Demo payment only — no real money is charged.</small></div><form method="post"><label class="form-label">Payment method</label><select class="form-select mb-4" name="paymentMethod"><option>UPI</option><option>Card</option><option>Wallet</option><option>Cash</option></select><button class="btn btn-primary w-100">Confirm demo payment</button></form></div></div>
+{% endblock %}

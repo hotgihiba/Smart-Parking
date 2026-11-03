@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Register{% endblock %}{% block content %}
+<div class="auth-wrap"><div class="card auth-card wide"><span class="eyebrow">JOIN PARKSMART</span><h2 class="fw-bold mt-2">Create citizen account</h2><form method="post" class="row g-3 mt-1">
+<div class="col-md-6"><label class="form-label">Full name</label><input class="form-control" name="name" required></div><div class="col-md-6"><label class="form-label">Email</label><input class="form-control" type="email" name="email" required></div>
+<div class="col-md-6"><label class="form-label">Phone</label><input class="form-control" name="phone"></div><div class="col-md-6"><label class="form-label">Password (minimum 6 characters)</label><input class="form-control" type="password" name="password" minlength="6" required></div>
+<div class="col-md-4"><label class="form-label">House no.</label><input class="form-control" name="houseNo"></div><div class="col-md-4"><label class="form-label">Area</label><input class="form-control" name="area"></div><div class="col-md-4"><label class="form-label">City</label><input class="form-control" name="city"></div>
+<div class="col-12"><button class="btn btn-primary w-100">Register</button></div></form></div></div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block title %}Home{% endblock %}{% block content %}
+<section class="hero p-4 p-lg-5 mb-5"><div class="row align-items-center"><div class="col-lg-7">
+ <span class="eyebrow">SMART CITY DIGITAL PLATFORM</span><h1 class="display-4 fw-bold mt-3">Parking made <span>simple.</span></h1>
+ <p class="lead mt-3">Find available parking, reserve your slot and manage your vehicles from one place.</p>
+ <a class="btn btn-primary btn-lg me-2" href="{{ url_for('parking_page') }}">Explore parking</a>
+ {% if not logged_user %}<a class="btn btn-outline-dark btn-lg" href="{{ url_for('register') }}">Create account</a>{% endif %}
+ </div><div class="col-lg-5 text-center"><div class="parking-art">P</div><p class="text-secondary mb-0">Your city. Your space. Your time.</p></div></div></section>
+<div class="d-flex justify-content-between align-items-center mb-3"><div><span class="eyebrow">LOCATIONS</span><h2 class="fw-bold">Parking near you</h2></div><a href="{{ url_for('parking_page') }}">View all →</a></div>
+<div class="row g-3">{% for lot in lots %}<div class="col-md-4"><div class="card h-100 p-3"><div class="d-flex justify-content-between"><span class="lot-icon">▦</span><span class="badge text-bg-success">{{ lot.availableSlots }} available</span></div><h5 class="mt-3">{{ lot.name }}</h5><p class="text-secondary mb-2">{{ lot.address.area if lot.address else '' }}, {{ lot.address.city if lot.address else '' }}</p><small class="text-secondary">{{ lot.totalSlots }} total slots</small></div></div>{% else %}<div class="col-12"><div class="empty">No parking locations added yet. The administrator can add locations from the Admin Panel.</div></div>{% endfor %}</div>
+{% endblock %}
